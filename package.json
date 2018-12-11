@@ -4,7 +4,7 @@
   "license": "Unlicense",
   "main": "index.js",
   "bin": {
-    "humblebundle-ebook-downloader": "index.js"
+    "vontjen-ebook-downloader": "index.js"
   },
   "scripts": {
     "test": "standard"
