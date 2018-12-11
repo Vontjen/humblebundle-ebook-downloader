@@ -243,7 +243,8 @@ function fetchOrders (next, session) {
       }
 
       var filteredOrders = orders.filter((order) => {
-        return flatten(keypath.get(order, 'subproducts.[].downloads.[].platform')).indexOf('ebook') !== -1
+        return flatten(keypath.get(order, 'subproducts.[].downloads.[].platform')).indexOf('ebook') !== -1 ||
+            flatten(keypath.get(order, 'subproducts.[].downloads.[].platform')).indexOf('video') !== -1
       })
 
       next(null, filteredOrders, session)
