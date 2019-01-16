@@ -317,7 +317,9 @@ function normalizeFormat (format) {
     case 'pdf (hd)':
       return 'pdf_hd'
     case 'download':
-      return 'pdf'
+      return 'zip'
+    case 'supplement':
+      return 'supplement.zip'
     default:
       return format.toLowerCase()
   }
@@ -416,7 +418,7 @@ function downloadBundles (next, bundles) {
 
     for (var subproduct of bundle.subproducts) {
       var filteredDownloads = subproduct.downloads.filter((download) => {
-        return download.platform === 'ebook'
+        return download.platform === 'ebook' || download.platform === 'video'
       })
 
       var downloadStructs = flatten(keypath.get(filteredDownloads, '[].download_struct'))
